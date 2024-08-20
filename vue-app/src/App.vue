@@ -3,5 +3,5 @@ import { ref, onMounted } from "vue";
 </script>
 
 <template>
-  <h1>Jobs</h1>
+  <h1 class="text-red-500 text-4xl">Jobs Listing</h1>
 </template>
