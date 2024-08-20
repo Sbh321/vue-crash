@@ -1,22 +1,26 @@
-<!-- Composition API Short Form-->
+<!-- Options API -->
 
-<script setup>
-import { ref } from "vue";
-
-const name = ref("Subham Bhandari");
-const status = ref("free");
-const message = ref("Hello! Welcome");
-const tasks = ref(["brush", "college", "intern"]);
-const link = ref("https://google.com");
-
-const toggleStatus = () => {
-  if (status.value === "busy") {
-    status.value = "free";
-  } else if (status.value === "free") {
-    status.value = "busy";
-  } else {
-    status.value = "haha";
-  }
+<script>
+export default {
+  data() {
+    return {
+      message: "Hello!",
+      status: "free",
+      tasks: ["brush", "college", "intern"],
+      link: "https://google.com",
+    };
+  },
+  methods: {
+    toggleStatus() {
+      if (this.status === "busy") {
+        this.status = "free";
+      } else if (this.status === "free") {
+        this.status = "busy";
+      } else {
+        this.status = "haha";
+      }
+    },
+  },
 };
 </script>
 
@@ -33,7 +37,7 @@ const toggleStatus = () => {
   <!-- Attribute binding in vue -->
   <!-- <a v-bind:href="link">Visit Google</a> -->
   <a :href="link">Visit Google</a>
-  <br />
+
   <!-- <button v-on:click="toggleStatus">Change Status</button> -->
   <button @click="toggleStatus">Change Status</button>
 </template>
